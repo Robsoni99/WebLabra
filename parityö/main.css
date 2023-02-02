@@ -1,0 +1,125 @@
+body {
+    background-color: rgb(0, 20, 30);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth
+    
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#content {
+    position: absolute;
+    top: 150px;
+    left: 15%;
+    right: 15%;
+    align-items: center;
+    background-color: rgb(0, 30, 50);
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 10px;
+}
+
+.esim-koodi {
+    background-color: rgb(91, 206, 255);
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size:30pt;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    margin-top: 18px;
+}
+
+h2 {
+    font-size: 15pt;
+    margin: 0;
+}
+
+p {
+    width: 100%;
+}
+
+.text {
+    margin-bottom: 70px;
+}
+
+ul {
+    margin-top: 0;
+    margin-left: 30px;
+}
+
+#ul-otsikko {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+
+/*dropdown menu*/
+.menu-btn {
+    padding-top: 5px;
+    padding-bottom: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+ }
+ nav {
+    display: inline-block;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding-bottom: 10px;
+ }
+
+ .menu-content {
+    padding-top: 20px;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+ }
+ .links {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 5px 3px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(91, 206, 255);
+    border-radius: 10px;
+ }
+ .links:hover {
+    background-color: rgb(91, 206, 255);
+    color: black;
+ }
+ nav:hover .menu-content {
+    display: block;
+ }
+ nav:hover .menu-btn {
+    background-color: rgb(91, 206, 255);
+    color: white;
+ }

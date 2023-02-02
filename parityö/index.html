@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <button class="menu-btn"><svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="20"></rect>
+            <rect y="30" width="100" height="20"></rect>
+            <rect y="60" width="100" height="20"></rect>
+          </svg></button>
+        <div class="menu-content">
+            <a id="sis-oliot" class="links" href="#sisäänrakennetut-oliot">Keskeiset sisäänrakennetut oliot</a>
+            <a class="links" href="#perusolion-toteutus">Perusolion toteutus</a>
+            <a class="links" href="#olion-ominaisuudet">Olion ominaisuudet</a>
+            <a class="links" href="#konstruktori">Konstruktorit</a>
+            <a class="links" href="#kapselointi">Kapselointi</a>
+            <a class="links" href="#periyttäminen">Periyttäminen</a>
+        </div>
+
+        <h1>Olio-ohjelmointi</h1>
+
+    </nav>
+
+    <div id="container">
+        
+        <div id="content">
+            <p class="text">
+                <b>Olio-ohjelmointi</b> on ohjelmointimalli, joka järjestää ohjelmistosuunnittelun 
+                datan tai objektien ympärille funktioiden ja logiikan sijaan. Objekti voidaan 
+                määritellä tietokenttään, jolla on ainutlaatuiset attribuutit ja käyttäytyminen.
+            </p>
+
+
+
+            <h2 id="sisäänrakennetut-oliot">Keskeiset sisäänrakennetut oliot</h2>
+            <p>
+                JavaScriptissä on neljä keskeistä sisäänrakennettua oliota, Array, Date, Math ja String.
+                Jokaisella oliolla on siihen liittyviä erikoisominaisuuksia ja -menetelmiä.
+            </p>
+            <p class="ul-otsikko">Math</p>
+            <ul id="math">
+                <li>Math on sisäänrakennettu staattinen olio.</li>
+                <li>Sitä käytetään monimutkaisten matemaattisten operaatioiden suorittamiseen.</li>
+            </ul>
+            <p class="ul-otsikko">Date</p>
+            <ul id="date">
+                <li>Date manipuloi päivämäärää ja aikaa.</li>
+                <li>Date() konstruktori ei ota argumentteja.</li>
+                <li>Date olio antaa palauttaa ja asettaa vuodet, kuukaudet, päivät,tunnit, minuutit, sekuntit ja millisekuntit.</li>
+            </ul>
+            <p class="ul-otsikko">String</p>
+            <ul class="text" id="string">
+                <li>String käytetään tekstin kanssa työskentelemiseen.</li>
+                <li>Se toimii useiden merkkien kanssa.</li>
+            </ul>
+
+
+
+            <h2 id="perusolion-toteutus">Perusolion toteutus</h2>
+            <p class="esim-koodi">
+                class Cars { <br>
+                    <span class="tab"></span>constructor(name, maker, price) {  <br>
+                        <span class="tab"></span><span class="tab"></span>this.name = name;  <br>
+                        <span class="tab"></span><span class="tab"></span>this.maker =  maker;  <br>
+                        <span class="tab"></span><span class="tab"></span>this.price = price;  <br>
+                        <span class="tab"></span>}  <br>
+                    <br>
+                    <span class="tab"></span>getDetails(){  <br>
+                        <span class="tab"></span><span class="tab"></span>return (`The name of the car is ${this.name}.`)  <br>
+                        <span class="tab"></span>}  <br>
+                  }  <br>
+                  <br>
+                  let car1 = new Cars('Rolls Royce Ghost', 'Rolls Royce', '$315K');  <br>
+                  let car2 = new Cars('Mercedes AMG One', 'Mercedes', '$2700K');  <br>
+                  <br>
+                  console.log(car1.name);      <br>
+                  console.log(car2.maker);    <br>
+                  console.log(car1.getDetails());
+            </p>
+            <p class="text"></p>
+
+            <h2 id="konstruktori">Konstruktori</h2>
+            <p>
+                <b>Konstruktori</b> on funktio, joka luo ja alustaa luokan objektiinstanssin. 
+                JavaScriptissä konstruktoria kutsutaan, kun objekti luodaan 'new' avainsanalla. 
+                Konstruktorin tarkoitus on luoda uusi objekti ja asettaa arvot olemassa oleville 
+                objektin ominaisuuksille. 
+            </p>
+            <p class="esim-koodi">
+                class Person { <br>
+                    <span class="tab"></span>name; <br>
+                    <span class="tab"></span>constructor(name) { <br>
+                        <span class="tab"></span><span class="tab"></span>this.name = name; <br>
+                        <span class="tab"></span>} <br>
+                    <br>
+                    <span class="tab"></span>introduceSelf() { <br>
+                        <span class="tab"></span><span class="tab"></span>console.log(`Hi! I'm ${this.name}`); <br>
+                        <span class="tab"></span>} <br>
+                  }
+            </p>
+            <p class="ul-otsikko">Kun konstruktori kutsutaan JavaScriptissä:</p>
+            <ul class="text" id="tapahtumat">
+                <li>Uusi tyhjä objekti luodaan.</li>
+                <li>'this' avainsana viittaa uuteen objektiin</li>
+                <li>Uusi objekti palautetaan sitten konstruktorin palautusarvona.</li>
+            </ul>
+
+
+
+            <h2 id="kapselointi">Kapselointi</h2>
+            <p>
+                Jokainen olion ominaisuus ja metodi on tallenettu olioon turvallisesti.
+                Myös muiden olioiden metodit voivat vaikuttaa olioomme, jos annamme niille 
+                luvan. Jokaiselle oliolle voi määritellä julkisia ja yksityisiä muuttujia ja 
+                metodeita. Toiset oliot pääsevät käsiksi julkisiin muuttujiin, mutta yksityiset 
+                muuttujat ovat suojattuja. Tätä kutsutaan kapseloinniksi, ja se tekee koodista 
+                paremmin suojattua.
+            </p>
+            <p>Esimerkki:</p>
+            <ul>
+              <li>Sankarilla on usein yksityisiä muuttujia kuten nimi ja vaatteet, ja metodeita 
+                  kuten hyökkäys, juoksu ja hyppy.</li>
+              <li>Sillä voi olla myös julkisia ominaisuuksia, kuten "elämät" ja metodeja kuten 
+                  "vahingoittuminen", joihin muut oliot pääsevät käsiksi ja voivat jopa muuttaa niitä. 
+                  "Vihollinen"-olio voisi vaikkapa hyökätessään kutsua funktiota "vahingoittuminen" 
+                  ja muuttaa sen kautta sankarin "elämät" muuttujan arvoa.</li>
+            </ul>
+
+            <p class="esim-koodi">
+                class Student extends Person { <br>
+                    <br>
+                    <span class="tab"></span>#year; <br>
+                    <br>
+                    <span class="tab"></span>constructor(name, year) { <br>
+                        <span class="tab"></span><span class="tab"></span>super(name); <br>
+                        <span class="tab"></span><span class="tab"></span>this.#year = year; <br>
+                        <span class="tab"></span>} <br>
+                    <br>
+                    <br>
+                    <span class="tab"></span>introduceSelf() { <br>
+                        <span class="tab"></span><span class="tab"></span>console.log(`Hi! I'm ${this.name}, and I'm in year ${this.#year}.`); <br>
+                        <span class="tab"></span>} <br>
+                    <br>
+                    <span class="tab"></span>canStudyArchery() { <br>
+                        <span class="tab"></span><span class="tab"></span>return this.#year > 1; <br>
+                        <span class="tab"></span>} <br>
+                  }
+            </p>
+            <p class="text"></p>
+
+
+
+            <h2 id="periyttäminen">Periyttäminen</h2>
+            <p>
+                Kaiken takana on vain kolmenlaisia olioita: funktio-olioita, prototyyppiolioita ja 
+                "tavallisia" olioita. Kaikilla olioilla (paitsi yhdellä) on oma prototyyppinsä, josta se 
+                perii ominaisuuksia. Prototyyppiperiytymisen perustana ovat funktio-oliot Object ja Function.
+                Jokaisella funktio-oliolla on oma prototyyppiolio, joka ei ole kuitenkaan funktion oma prototyyppi 
+                - paitsi yhdellä funktiolla: funktiolla Function prototyyppi ja prototyyppiolio ovat sama asia, 
+                sillä Function-olio perii funktio-ominaisuutensa omalta prototyyppiolioltaan. Konstruktorifunktioiden 
+                prototyyppiolioista muodostetaan linkitettyjä ketjuja, joista oliot perivät ominaisuuksia. Normaalisti 
+                jokaisen olion prototyyppien ketju päättyy Object-funktion prototyyppiolioon.
+
+            </p>
+            <p class="esim-koodi">
+                class Professor extends Person { <br>
+                    <br>
+                    <span class="tab"></span>teaches; <br>
+                    <br>
+                    <span class="tab"></span>constructor(name, teaches) { <br>
+                        <span class="tab"></span><span class="tab"></span>super(name); <br>
+                        <span class="tab"></span><span class="tab"></span>this.teaches = teaches; <br>
+                        <span class="tab"></span>} <br>
+                    <br>
+                    <span class="tab"></span>introduceSelf() { <br>
+                        <span class="tab"></span><span class="tab"></span>console.log(`My name is ${this.name}, and I will be your ${this.teaches} professor.`); <br>
+                        <span class="tab"></span>} <br>
+                    <br>
+                    <span class="tab"></span>grade(paper) { <br>
+                        <span class="tab"></span><span class="tab"></span>const grade = Math.floor(Math.random() * (5 - 1) + 1); <br>
+                        <span class="tab"></span><span class="tab"></span>console.log(grade); <br>
+                        <span class="tab"></span>} <br>
+                  }
+            </p>
+        </div>
+    </div>
+</body>
+</html>
