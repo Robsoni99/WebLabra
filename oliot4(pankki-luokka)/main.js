@@ -10,10 +10,32 @@ class pankki {
     }
 }
 
-let pankki1 = new pankki("FI 49 66010001234568", 0, [])
+class tarkistus extends pankki {
+    static tarkista() {
+        let numero = pankki1.tilinumero
+        numero = numero.toLowerCase()
+        numero = numero.replace(/\s/g, '');
+        if(numero.length != 18) {
+            console.log("koitappa uudestaan")
+            pankki1 = new pankki(prompt("syötä tilinumero"), prompt("syötä saldo"), [])
+        } else {
+            const ekat = numero.slice(0, 2);
+            
+            if(ekat != "fi") {
+                console.log("koitappa uudestaan")
+                pankki1 = new pankki(prompt("syötä tilinumero"), prompt("syötä saldo"), [])
+            } else {
+                console.log("hyvä hyvä")
+            }
+        }
+    }
+}
 
-/* let historia = pankki1.historia
- */
+let pankki1 = new pankki(prompt("syötä tilinumero"), prompt("syötä saldo"), [])
+
+let  validaattori = new tarkistus();
+tarkistus.tarkista()
+
 function talleta() {
     let talletuksenMäärä = parseFloat(prompt())
     pankki1.saldo = pankki1.saldo + talletuksenMäärä
@@ -43,3 +65,5 @@ function historia() {
 function näytäTiedot() {
     console.log(pankki1)
 }
+
+
